@@ -18,7 +18,8 @@ CFLAGS		=	-Wall -Wextra -Werror
 
 INCLUDES	=	-I includes
 
-SRCS		=	ft_isalnum.c \
+SRCS		=	ft_atoi.c \
+				ft_isalnum.c \
 				ft_isascii.c \
 				ft_isalpha.c \
 				ft_isdigit.c \

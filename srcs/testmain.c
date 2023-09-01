@@ -3,6 +3,5 @@
 #include <stdio.h>
 int main()
 {
-	printf("%c\n",ft_tolower('@'));
-	printf("%c\n",ft_tolower('['));
+	printf("%d\n",ft_atoi("   -5a"));
 }

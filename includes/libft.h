@@ -28,6 +28,7 @@ int ft_strlen(char *str);
 /*transformation*/
 int ft_tolower(int c);
 int ft_toupper(int c);
+int ft_atoi(const char *str);
 
 
 /*main*/
