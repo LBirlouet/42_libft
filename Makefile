@@ -25,6 +25,7 @@ SRCS		=	ft_atoi.c \
 				ft_isdigit.c \
 				ft_isprint.c \
 				ft_memchr.c \
+				ft_memcmp.c \
 				ft_strchr.c \
 				ft_strrchr.c \
 				ft_strlen.c \
