@@ -3,11 +3,16 @@
 #include <stdio.h>
 int main()
 {
-	printf("%d\n",ft_strncmp("aaa", "aa", 15));
+	const char s1[50] = "trertt 8aa 5pp";
+	const char s2[50] = "8aa";
+	size_t n = 8;
+	char *res = ft_strnstr(s1, s2, n);
+
+	if(res)
+		printf("%s\n",res);
+	else
+		printf("%p\n",res);
 }
-
-
-
 
 
 /*{
