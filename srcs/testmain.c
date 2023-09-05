@@ -3,12 +3,14 @@
 #include <stdio.h>
 int main()
 {
-	char buffer[5];
+	char dest[8] = "abcdefgh";
+	char src[4] = "1234";
 
-	ft_memset(buffer, 'y', sizeof(char) * 5);
 
-	for(int i = 0; i < 5; i++)
-		printf("%c", buffer[i]);
+	ft_memmove(dest, src, sizeof(char) * 4);
+
+	for(int i = 0; i < 8; i++)
+		printf("%c", dest[i]);
 	printf("\n");
 }
 
