@@ -5,29 +5,29 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbirloue <lbirloue@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/29 19:31:44 by lbirloue          #+#    #+#             */
-/*   Updated: 2023/08/29 19:31:44 by lbirloue         ###   ########.fr       */
+/*   Created: 2023/10/12 15:23:20 by lbirloue          #+#    #+#             */
+/*   Updated: 2023/10/12 15:23:20 by lbirloue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_atoi(const char *str)
+int	ft_atoi(const char *str)
 {
-	int i;
-	int ret;
-	int sign;
+	int	i;
+	int	ret;
+	int	sign;
 
 	i = 0;
 	ret = 0;
 	sign = 1;
 	if (!str)
 		return (0);
-	while (str[i] == '\t' || str[i] == '\v' || str[i] == '\n' ||str[i] == '\r' 
+	while (str[i] == '\t' || str[i] == '\v' || str[i] == '\n' || str[i] == '\r' 
 		|| str[i] == '\f' || str[i] == 32)
 		i++;
 	if (str[i] == '+' || str[i] == '-')
-	{	
+	{
 		if (str[i + 1] == '+' || str[i + 1] == '-')
 			return (0);
 		if (str[i] == '-')

@@ -5,18 +5,18 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbirloue <lbirloue@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/29 19:06:00 by lbirloue          #+#    #+#             */
-/*   Updated: 2023/08/29 19:06:00 by lbirloue         ###   ########.fr       */
+/*   Created: 2023/10/12 15:35:22 by lbirloue          #+#    #+#             */
+/*   Updated: 2023/10/12 15:35:22 by lbirloue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t ft_strlen(const char *str)
+size_t	ft_strlen(const char *str)
 {
-    int i;
+	int	i;
 
-    i = 0;
+	i = 0;
 	while (str[i] != 0)
 		i++;
 	return (i);

@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: lbirloue <lbirloue@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/08/29 11:27:16 by lbirloue          #+#    #+#              #
-#    Updated: 2023/08/29 11:27:16 by lbirloue         ###   ########.fr        #
+#    Created: 2023/10/12 15:39:47 by lbirloue          #+#    #+#              #
+#    Updated: 2023/10/12 15:39:47 by lbirloue         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,12 +31,18 @@ SRCS		=	ft_atoi.c \
 				ft_memmove.c \
 				ft_memset.c \
 				ft_strchr.c \
+				ft_strdup.c \
+				ft_strlcat.c \
+				ft_strlcpy.c \
 				ft_strlen.c \
 				ft_strncmp.c \
 				ft_strnstr.c \
 				ft_strrchr.c \
 				ft_tolower.c \
 				ft_toupper.c \
+				ft_substr.c \
+				ft_strjoin.c \
+				ft_strtrim.c \
 				testmain.c
 
 OBJS		=	$(addprefix srcs/, ${SRCS:.c=.o})

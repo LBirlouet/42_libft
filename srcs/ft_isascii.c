@@ -5,16 +5,16 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbirloue <lbirloue@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/29 18:50:15 by lbirloue          #+#    #+#             */
-/*   Updated: 2023/08/29 18:50:15 by lbirloue         ###   ########.fr       */
+/*   Created: 2023/10/12 15:25:17 by lbirloue          #+#    #+#             */
+/*   Updated: 2023/10/12 15:25:17 by lbirloue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isascii(int c)
+int	ft_isascii(int c)
 {
-	if(c >= 0 && c <= 127)
-        return (1);
+	if (c >= 0 && c <= 127)
+		return (1);
 	return (0);
 }

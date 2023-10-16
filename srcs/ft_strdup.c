@@ -1,29 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbirloue <lbirloue@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/12 15:38:59 by lbirloue          #+#    #+#             */
-/*   Updated: 2023/10/12 15:39:00 by lbirloue         ###   ########.fr       */
+/*   Created: 2023/10/16 13:04:50 by lbirloue          #+#    #+#             */
+/*   Updated: 2023/10/16 13:19:55 by lbirloue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "stdlib.h"
 
-char	*ft_strrchr(const char *s, int c)
+size_t	ft_str_size(const char *str)
 {
-	int				i;
-	unsigned char	*ret;
+	int	i;
 
-	i = ft_strlen(s);
-	ret = (unsigned char *)s;
-	while (ret[i] != c)
+	i = 0;
+	while (str[i] != 0)
+		i++;
+	return (i);
+}
+
+char	*ft_strdup(const char *s)
+{
+	char	*ret;
+	int		i;
+
+	i = 0;
+	if (!s)
+		return (0);
+	ret = malloc((ft_str_size(s) + 1) * sizeof(char));
+	if (!ret)
+		return (0);
+	while (s[i] != 0)
 	{
-		if (ret[i - 1] == 0)
-			return (0);
-		i--;
+		ret[i] = s[i];
+		i++;
 	}
-	return ((char *)ret + i);
+	ret[i] = 0;
+	return (ret);
 }

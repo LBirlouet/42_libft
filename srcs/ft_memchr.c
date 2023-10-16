@@ -5,30 +5,31 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbirloue <lbirloue@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/03 16:59:46 by lbirloue          #+#    #+#             */
-/*   Updated: 2023/09/03 17:26:12 by lbirloue         ###   ########.fr       */
+/*   Created: 2023/10/12 15:26:10 by lbirloue          #+#    #+#             */
+/*   Updated: 2023/10/12 15:29:07 by lbirloue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_memchr(const void *s, int c, size_t n)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	int i = 0;
-    unsigned char *ret;
+	int				i;
+	unsigned char	*ret;
+
 	ret = (unsigned char *)s;
-    
-    while (n > 0)
-    {
-        if(ret[i] != c)
-        {
-            if (ret[i] == 0)
-			    return (0);
-        }
-        if(ret[i] == c)
-            return ((char *)ret + i);
-        i++;
-        n--;
-    }
-    return (0);
+	i = 0;
+	while (n > 0)
+	{
+		if (ret[i] != c)
+		{
+			if (ret[i] == 0)
+				return (0);
+		}
+		if (ret[i] == c)
+			return ((char *)ret + i);
+		i++;
+		n--;
+	}
+	return (0);
 }

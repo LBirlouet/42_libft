@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbirloue <lbirloue@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/29 19:18:23 by lbirloue          #+#    #+#             */
-/*   Updated: 2023/08/29 19:18:23 by lbirloue         ###   ########.fr       */
+/*   Created: 2023/10/12 15:39:25 by lbirloue          #+#    #+#             */
+/*   Updated: 2023/10/12 15:39:25 by lbirloue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_toupper(int c)
+int	ft_toupper(int c)
 {
 	if (c >= 'a' && c <= 'z')
 		c = c - 32;

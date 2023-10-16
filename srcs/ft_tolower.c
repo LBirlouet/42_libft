@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbirloue <lbirloue@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/29 19:27:04 by lbirloue          #+#    #+#             */
-/*   Updated: 2023/08/29 19:27:04 by lbirloue         ###   ########.fr       */
+/*   Created: 2023/10/12 15:39:11 by lbirloue          #+#    #+#             */
+/*   Updated: 2023/10/12 15:39:11 by lbirloue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_tolower(int c)
+int	ft_tolower(int c)
 {
 	if (c >= 'A' && c <= 'Z')
 		c = c + 32;
