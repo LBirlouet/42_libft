@@ -43,6 +43,7 @@ SRCS		=	ft_atoi.c \
 				ft_substr.c \
 				ft_strjoin.c \
 				ft_strtrim.c \
+				ft_split.c \
 				testmain.c
 
 OBJS		=	$(addprefix srcs/, ${SRCS:.c=.o})

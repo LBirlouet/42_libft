@@ -6,15 +6,11 @@
 /*   By: lbirloue <lbirloue@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 13:51:37 by lbirloue          #+#    #+#             */
-/*   Updated: 2023/10/16 17:03:40 by lbirloue         ###   ########.fr       */
+/*   Updated: 2023/10/18 10:12:16 by lbirloue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-
-#include "stdio.h"
-
 
 size_t	check_verif(char c, char const *set)
 {
@@ -40,7 +36,7 @@ size_t	start_indice(char const *s1, char const *set)
 	while (check_verif(s1[i], set) != 0)
 	{
 		count++;
-    	i++;
+		i++;
 	}
 	return (count);
 }
@@ -55,7 +51,7 @@ size_t	final_indice(char const *s1, char const *set)
 	while (check_verif(s1[i - 1], set) != 0)
 	{
 		count++;
-    	i--;
+		i--;
 	}
 	return (count);
 }
