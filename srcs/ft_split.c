@@ -6,7 +6,7 @@
 /*   By: lbirloue <lbirloue@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 09:57:00 by lbirloue          #+#    #+#             */
-/*   Updated: 2023/10/18 17:59:53 by lbirloue         ###   ########.fr       */
+/*   Updated: 2023/10/18 19:12:48 by lbirloue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ char	**split2(char const *s, char c, char **ret)
 			ret[++j] = ft_substr(s, i, len_str);
 			if (!ret[j])
 				freeall(ret, count_str);
-			i +=  len_str;
+			i += len_str;
 		}
 	}
 	ret[++j] = 0;
