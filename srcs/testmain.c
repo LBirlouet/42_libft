@@ -27,7 +27,7 @@
 #include <stdio.h>
 int main()
 {
-	ft_putstr_fd("test", 1);
+	ft_putnbr_fd(1-5, 1);
 }
 
 
