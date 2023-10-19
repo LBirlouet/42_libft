@@ -27,7 +27,7 @@
 #include <stdio.h>
 int main()
 {
-	ft_putnbr_fd(1-5, 1);
+	printf("|%d|\n", ft_atoi(""));
 }
 
 

@@ -6,7 +6,7 @@
 /*   By: lbirloue <lbirloue@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 13:36:41 by lbirloue          #+#    #+#             */
-/*   Updated: 2023/10/16 13:49:53 by lbirloue         ###   ########.fr       */
+/*   Updated: 2023/10/19 13:35:50 by lbirloue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	}
 	while (i < size_s1 + size_s2)
 	{
-		ret[i] = s2[j];
+		ret[i] = s2[j++];
 		i++;
-		j++;
 	}
 	ret[i] = 0;
 	return (ret);
