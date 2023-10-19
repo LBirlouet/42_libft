@@ -6,7 +6,7 @@
 /*   By: lbirloue <lbirloue@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 13:51:37 by lbirloue          #+#    #+#             */
-/*   Updated: 2023/10/19 13:30:39 by lbirloue         ###   ########.fr       */
+/*   Updated: 2023/10/19 14:56:23 by lbirloue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,3 +67,4 @@ char	*ft_strtrim(char const *s1, char const *set)
 	ret_size = ft_strlen(s1) - final_str - start_str;
 	return (ft_substr(s1, start_str, ret_size));
 }
+

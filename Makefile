@@ -16,7 +16,7 @@ CC			=	gcc
 
 CFLAGS		=	-Wall -Wextra -Werror
 
-INCLUDES	=	-I includes
+INCLUDES	=	-I libft.h
 
 SRCS		=	ft_atoi.c \
 				ft_bzero.c \
@@ -51,18 +51,15 @@ SRCS		=	ft_atoi.c \
 				ft_putstr_fd.c \
 				ft_putendl_fd.c \
 				ft_putnbr_fd.c \
-				testmain.c
 
-OBJS		=	$(addprefix srcs/, ${SRCS:.c=.o})
+OBJS		=	${SRCS:.c=.o}
 
 %.o:		%.c
 	@${CC} ${CFLAGS} ${INCLUDES} -c $< -o $@
 
-	@printf "\e[1;32m.\e[0;m"
-
 
 ${NAME}:	${OBJS}
-	@${CC} ${CFLAGS} ${INCLUDES} $^ -o $@
+	ar -rcs $(NAME) $(OBJS)
 
 
 all:		${NAME}
