@@ -6,7 +6,7 @@
 /*   By: lbirloue <lbirloue@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 15:30:43 by lbirloue          #+#    #+#             */
-/*   Updated: 2023/10/19 13:29:12 by lbirloue         ###   ########.fr       */
+/*   Updated: 2023/10/19 16:08:44 by lbirloue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	unsigned char	*cpy;
 
 	i = 0;
+	if (dest == NULL && src == NULL)
+		return (NULL);
 	ret = (unsigned char *)dest;
 	cpy = (unsigned char *)src;
 	while (n > 0)
@@ -27,5 +29,5 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 		i++;
 		n--;
 	}
-	return ((char *)ret + i);
+	return (ret);
 }

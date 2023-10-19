@@ -6,43 +6,37 @@
 /*   By: lbirloue <lbirloue@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 11:16:18 by lbirloue          #+#    #+#             */
-/*   Updated: 2023/10/16 13:14:50 by lbirloue         ###   ########.fr       */
+/*   Updated: 2023/10/19 18:53:27 by lbirloue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strn_size(const char *str)
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	int	i;
+	char		*dest;
+	const char	*source;
+	size_t		n;
+	size_t		dst_size;
 
-	i = 0;
-	while (str[i] != 0)
-		i++;
-	return (i);
-}
-
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
-{
-	size_t	dst_size;
-	size_t	pos;
-	size_t	i;
-
-	i = 0;
-	if (size < i)
-		return (0); 
-	if (!size || size + 1 < ft_strn_size(src))
-		return (ft_strn_size(src) + size);
-	if (!src)
-		return (size);
-	dst_size = ft_strn_size(dst);
-	pos = dst_size;
-	while (size > dst_size + 1 && size > ft_strn_size(src))
+	dest = dst;
+	n = dstsize;
+	source = src;
+	while (n-- != 0 && *dest)
+		dest++;
+	dst_size = dest - dst;
+	n = dstsize - dst_size;
+	if (n == 0)
+		return (ft_strlen(source) + dst_size);
+	while (*source)
 	{
-		dst[dst_size] = src[i];
-		i++;
-		dst_size++;
+		if (n != 1)
+		{
+			*dest++ = *source;
+			n--;
+		}
+		source++;
 	}
-	dst[dst_size] = 0;
-	return (pos + ft_strn_size(src));
+	*dest = '\0';
+	return ((source - src) + dst_size);
 }

@@ -6,7 +6,7 @@
 /*   By: lbirloue <lbirloue@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 15:33:17 by lbirloue          #+#    #+#             */
-/*   Updated: 2023/10/19 13:29:18 by lbirloue         ###   ########.fr       */
+/*   Updated: 2023/10/19 16:03:47 by lbirloue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,5 @@ void	*ft_memset(void *s, int c, size_t n)
 		i++;
 		n--;
 	}
-	return ((char *)ret + i);
+	return (ret);
 }
