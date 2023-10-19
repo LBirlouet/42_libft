@@ -27,14 +27,7 @@
 #include <stdio.h>
 int main()
 {
-	int i = 0;
-    char **strs = ft_split("a\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", '\n');
-	while (strs[i])
-	{
-        printf("|%s|\n", strs[i]);
-		i++;
-	}
-	
+	ft_putstr_fd("test", 1);
 }
 
 
@@ -45,6 +38,23 @@ int main()
 
 
 
+
+
+
+
+
+
+/*
+{
+	int i = 0;
+    char **strs = ft_split("a\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", '\n');
+	while (strs[i])
+	{
+        printf("|%s|\n", strs[i]);
+		i++;
+	}	
+}
+*/
 
 /*{
     char *src = "1234";

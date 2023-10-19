@@ -6,31 +6,85 @@
 /*   By: lbirloue <lbirloue@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 19:14:14 by lbirloue          #+#    #+#             */
-/*   Updated: 2023/10/18 19:25:29 by lbirloue         ###   ########.fr       */
+/*   Updated: 2023/10/19 11:29:44 by lbirloue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	c_nbr(int n) //nbr de dizaine
+int	c_nbr(int n)
 {
-	
+	int	i;
+
+	i = 0;
+	if (n < 0)
+		i = i + 1;
+	if (n == 0)
+		return (1);
+	while (n != 0)
+	{
+		n = n / 10;
+		i++;
+	}
+	return (i);
 }
 
-char    *ft_itoa(int n)
+char	*posint(int char_nbr, int n, char *ret)
+{
+	int		char_0;
+	char	char_c;
+
+	char_0 = char_nbr;
+	while (char_nbr >= 0)
+	{
+		char_c = ((n % 10) + 48);
+		n = n / 10;
+		ret[char_nbr - 1] = char_c;
+		char_nbr--;
+	}
+	ret[char_0] = 0;
+	return (ret);
+}
+
+char	*negint(int char_nbr, int n, char *ret)
+{
+	int		char_0;
+	char	char_c;
+
+	char_0 = char_nbr;
+	n = -n;
+	while (char_nbr >= 0)
+	{
+		char_c = ((n % 10) + 48);
+		n = n / 10;
+		ret[char_nbr - 1] = char_c;
+		char_nbr--;
+	}
+	ret[0] = '-';
+	ret[char_0] = 0;
+	return (ret);
+}
+
+char	*ft_itoa(int n)
 {
 	char	*ret;
 	int		char_nbr;
-	
-	if(n = -2147483648)
+	int		char_0;
+
+	if (n == -2147483648)
 		return (ft_strdup("-2147483648"));
-	char_nbr = c_nbr(n)
-	ret = malloc((char_nbr + 1) * sizeof(char));
+	char_nbr = c_nbr(n);
+	char_0 = char_nbr;
+	if (n < 0)
+		char_0 = char_0 + 1;
+	ret = malloc((char_0) * sizeof(char));
 	if (!ret)
 		return (0);
-	while (char_nbr != 0);
-	{
-		ret[char_nbr] = n%10;
-		char_nbr--;
-	}
+	if (n > 0)
+		return (posint(char_nbr, n, ret));
+	if (n == 0)
+		return (ft_strdup("0"));
+	if (n < 0)
+		return (negint(char_nbr, n, ret));
+	return (0);
 }
