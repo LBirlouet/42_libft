@@ -53,21 +53,40 @@ SRCS		=	ft_atoi.c \
 				ft_putendl_fd.c \
 				ft_putnbr_fd.c \
 
+BONUS		=	ft_lstnew_bonus.c \
+				ft_lstadd_front_bonus.c \
+				ft_lstsize_bonus.c \
+				ft_lstlast_bonus.c \
+				ft_lstadd_back_bonus.c \
+				ft_lstdelone_bonus.c \
+				ft_lstclear_bonus.c \
+				ft_lstiter_bonus.c \
+				ft_lstmap_bonus.c \
+
+
 OBJS		=	${SRCS:.c=.o}
 
-%.o:		%.c
-	@${CC} ${CFLAGS} ${INCLUDES} -c $< -o $@
 
-
-${NAME}:	${OBJS}
-	ar -rcs $(NAME) $(OBJS)
+OBJSBONUS	= 	${BONUS:.c=.o}
 
 
 all:		${NAME}
 
 
+bonus :	${OBJS} ${OBJSBONUS}
+	ar -rc ${NAME} ${OBJS} ${OBJSBONUS}
+
+
+${NAME}:	${OBJS}
+	ar -rc ${NAME} ${OBJS}
+
+
+%.o:		%.c
+	@${CC} ${CFLAGS} ${INCLUDES} -c $< -o $@
+
+
 clean:
-	rm -f ${OBJS}
+	rm -f ${OBJS} ${OBJSBONUS}
 
 
 fclean:		clean
@@ -77,4 +96,4 @@ fclean:		clean
 re:			fclean all
 
 
-.PHONY:		all clean fclean re
+.PHONY:		all clean fclean bonus re 

@@ -6,13 +6,11 @@
 /*   By: lbirloue <lbirloue@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 09:57:00 by lbirloue          #+#    #+#             */
-/*   Updated: 2023/10/18 19:12:48 by lbirloue         ###   ########.fr       */
+/*   Updated: 2023/10/23 17:40:15 by lbirloue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-#include <stdio.h>
 
 size_t	size_str(char const *s, char c, ssize_t i)
 {
@@ -52,7 +50,7 @@ int	str_count(char const *s, char c)
 
 char	*freeall(char **s, ssize_t i)
 {
-	while (i > 0)
+	while (i >= 0)
 	{
 		free(s[i]);
 		s[i] = NULL;
@@ -83,7 +81,7 @@ char	**split2(char const *s, char c, char **ret)
 			len_str = size_str(s, c, i);
 			ret[++j] = ft_substr(s, i, len_str);
 			if (!ret[j])
-				freeall(ret, count_str);
+				freeall(ret, j);
 			i += len_str;
 		}
 	}

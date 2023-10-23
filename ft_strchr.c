@@ -6,7 +6,7 @@
 /*   By: lbirloue <lbirloue@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 15:34:13 by lbirloue          #+#    #+#             */
-/*   Updated: 2023/10/19 13:29:44 by lbirloue         ###   ########.fr       */
+/*   Updated: 2023/10/23 16:40:49 by lbirloue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strchr(const char *s, int c)
 
 	ret = (unsigned char *)s;
 	i = 0;
-	while (ret[i] != c)
+	while (ret[i] != (unsigned char)c)
 	{
 		if (ret[i] == 0)
 			return (0);
