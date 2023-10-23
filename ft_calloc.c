@@ -1,34 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbirloue <lbirloue@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/12 15:35:51 by lbirloue          #+#    #+#             */
-/*   Updated: 2023/10/20 11:29:35 by lbirloue         ###   ########.fr       */
+/*   Created: 2023/10/20 14:35:13 by lbirloue          #+#    #+#             */
+/*   Updated: 2023/10/23 09:49:26 by lbirloue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+void	*ft_calloc(size_t count, size_t size)
 {
-	unsigned int	i;
-	unsigned char	*str1;
-	unsigned char	*str2;
+	char	*ret;
 
-	str1 = (unsigned char *)s1;
-	str2 = (unsigned char *)s2;
-	i = 0;
-	if ((str1[0] == 0 && str2[0] == 0) || n == 0)
+	ret = malloc(size * count);
+	if (!ret)
 		return (0);
-	while (str1[i] == str2[i] && n > i && str1[i] && str2[i])
-		i++;
-	if (i == n || str1[i] == str2[i])
-		return (0);
-	if (str1[i] >= 0 && str2[i] >= 0 && str2[i] > str1[i])
-		return (-1);
-	else
-		return (1);
+	ft_bzero(ret, size * count);
+	return (ret);
 }

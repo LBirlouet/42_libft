@@ -6,32 +6,52 @@
 /*   By: lbirloue <lbirloue@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 15:36:35 by lbirloue          #+#    #+#             */
-/*   Updated: 2023/10/19 13:31:09 by lbirloue         ###   ########.fr       */
+/*   Updated: 2023/10/20 14:33:25 by lbirloue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *s1, const char *s2, size_t n)
+int	verif(const char *s1, const char *s2, size_t n)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	j = 0;
+	while (s2[j] != '\0' )
+	{
+		if (s2[j] != s1[n + j])
+			i = 1;
+		j++;
+	}
+	return (i);
+}
+
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	size_t	i;
 	size_t	j;
-	size_t	sizes2;
 
 	i = 0;
-	sizes2 = ft_strlen(s2);
-	while (n > 0)
-	{
-		j = 0;
-		while (s1[i] == s2[j] && s1[i] != 0)
-		{
-			i++;
-			j++;
-		}
-		if (s2[j] == 0)
-			return ((char *)s1 + i - sizes2);
+	if (needle[0] == 0)
+		return ((char *)haystack);
+	else if (haystack[0] == 0 || 1 > len || (haystack[0] == 0 
+			&& (needle[0] != 0)))
+		return (NULL);
+	while (haystack[i] != 0)
 		i++;
-		n--;
+	j = 0;
+	while (j < i - 1 && j < len - 1)
+	{
+		if (j + ft_strlen(needle) <= len && needle[0] == haystack[j])
+		{
+			if (verif(haystack, needle, j) == 0)
+				return ((char *)haystack + j);
+		}
+		j++;
 	}
-	return (0);
+	if (ft_strlen(needle) == 1 && needle[0] == haystack[0])
+		return ((char *) haystack);
+	return (NULL);
 }

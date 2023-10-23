@@ -6,21 +6,11 @@
 /*   By: lbirloue <lbirloue@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 13:04:50 by lbirloue          #+#    #+#             */
-/*   Updated: 2023/10/19 13:29:47 by lbirloue         ###   ########.fr       */
+/*   Updated: 2023/10/20 10:06:23 by lbirloue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "stdlib.h"
-
-size_t	ft_str_size(const char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i] != 0)
-		i++;
-	return (i);
-}
+#include "libft.h"
 
 char	*ft_strdup(const char *s)
 {
@@ -30,7 +20,7 @@ char	*ft_strdup(const char *s)
 	i = 0;
 	if (!s)
 		return (0);
-	ret = malloc((ft_str_size(s) + 1) * sizeof(char));
+	ret = malloc((ft_strlen(s) + 1) * sizeof(char));
 	if (!ret)
 		return (0);
 	while (s[i] != 0)

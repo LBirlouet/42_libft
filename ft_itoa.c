@@ -6,7 +6,7 @@
 /*   By: lbirloue <lbirloue@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 19:14:14 by lbirloue          #+#    #+#             */
-/*   Updated: 2023/10/19 13:29:03 by lbirloue         ###   ########.fr       */
+/*   Updated: 2023/10/23 09:50:07 by lbirloue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ char	*posint(int char_nbr, int n, char *ret)
 	char	char_c;
 
 	char_0 = char_nbr;
-	while (char_nbr >= 0)
+	while (char_nbr > 0)
 	{
 		char_c = ((n % 10) + 48);
 		n = n / 10;
@@ -53,7 +53,7 @@ char	*negint(int char_nbr, int n, char *ret)
 
 	char_0 = char_nbr;
 	n = -n;
-	while (char_nbr >= 0)
+	while (char_nbr > 0)
 	{
 		char_c = ((n % 10) + 48);
 		n = n / 10;
@@ -75,16 +75,21 @@ char	*ft_itoa(int n)
 		return (ft_strdup("-2147483648"));
 	char_nbr = c_nbr(n);
 	char_0 = char_nbr;
+	if (n >= 0)
+		char_0 = char_0 + 1;
 	if (n < 0)
 		char_0 = char_0 + 1;
-	ret = malloc((char_0) * sizeof(char));
-	if (!ret)
-		return (0);
-	if (n > 0)
-		return (posint(char_nbr, n, ret));
 	if (n == 0)
 		return (ft_strdup("0"));
-	if (n < 0)
-		return (negint(char_nbr, n, ret));
+	else
+	{
+		ret = malloc((char_0) * sizeof(char));
+		if (!ret)
+			return (0);
+		if (n > 0)
+			return (posint(char_nbr, n, ret));
+		if (n < 0)
+			return (negint(char_nbr, n, ret));
+	}
 	return (0);
 }
