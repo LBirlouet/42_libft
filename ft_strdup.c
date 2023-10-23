@@ -6,7 +6,7 @@
 /*   By: lbirloue <lbirloue@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 13:04:50 by lbirloue          #+#    #+#             */
-/*   Updated: 2023/10/20 10:06:23 by lbirloue         ###   ########.fr       */
+/*   Updated: 2023/10/23 19:12:07 by lbirloue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ char	*ft_strdup(const char *s)
 	int		i;
 
 	i = 0;
-	if (!s)
-		return (0);
 	ret = malloc((ft_strlen(s) + 1) * sizeof(char));
 	if (!ret)
 		return (0);
