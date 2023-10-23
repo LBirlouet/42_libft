@@ -6,7 +6,7 @@
 /*   By: lbirloue <lbirloue@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 09:57:00 by lbirloue          #+#    #+#             */
-/*   Updated: 2023/10/23 18:57:21 by lbirloue         ###   ########.fr       */
+/*   Updated: 2023/10/23 19:18:56 by lbirloue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int	str_count(char const *s, char c)
 	return (j);
 }
 
-char	*freeall(char **s, ssize_t i)
+char	**freeall(char **s, ssize_t i)
 {
 	while (i >= 0)
 	{
@@ -58,7 +58,7 @@ char	*freeall(char **s, ssize_t i)
 	}
 	free(s);
 	s = NULL;
-	return (*s);
+	return (s);
 }
 
 char	**split2(char const *s, char c, char **ret)
@@ -81,7 +81,7 @@ char	**split2(char const *s, char c, char **ret)
 			len_str = size_str(s, c, i);
 			ret[++j] = ft_substr(s, i, len_str);
 			if (!ret[j])
-				freeall(ret, j);
+				return (freeall(ret, j));
 			i += len_str;
 		}
 	}
