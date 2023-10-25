@@ -6,7 +6,7 @@
 /*   By: lbirloue <lbirloue@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 13:35:58 by lbirloue          #+#    #+#             */
-/*   Updated: 2023/10/25 10:39:54 by lbirloue         ###   ########.fr       */
+/*   Updated: 2023/10/25 14:34:52 by lbirloue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*ret;
 
 	ret = 0;
-	if (!lst || !f)
+	if (!lst || !f || !del)
 		return (NULL);
 	while (lst)
 	{

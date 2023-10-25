@@ -12,11 +12,23 @@
 
 #include "libft.h"
 
+static unsigned long long	ft_atoi2(unsigned long long ret, int sign)
+{
+	if (ret > 9223372036854775807) 
+	{
+		if (sign == 1)
+			return (-1);
+		if (sign == -1)
+			return (0);
+	}
+	return (ret * sign);
+}
+
 int	ft_atoi(const char *str)
 {
-	int	i;
-	int	ret;
-	int	sign;
+	int					i;
+	unsigned long long	ret;
+	int					sign;
 
 	i = 0;
 	ret = 0;
@@ -35,8 +47,8 @@ int	ft_atoi(const char *str)
 	{
 		ret = (ret * 10) + (str[i] - 48);
 		if (!(str[i + 1] >= '0' && str[i + 1] <= '9'))
-			return (ret * sign);
+			return (ft_atoi2(ret, sign));
 		i++;
 	}
-	return (ret * sign);
+	return (ft_atoi2(ret, sign));
 }
