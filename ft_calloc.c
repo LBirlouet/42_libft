@@ -6,7 +6,7 @@
 /*   By: lbirloue <lbirloue@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 14:35:13 by lbirloue          #+#    #+#             */
-/*   Updated: 2023/10/23 09:49:26 by lbirloue         ###   ########.fr       */
+/*   Updated: 2023/10/25 17:52:47 by lbirloue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,15 @@
 
 void	*ft_calloc(size_t count, size_t size)
 {
-	char	*ret;
+	void	*ret;
+	size_t	verif;
 
+	verif = count * size;	
+	if (count != 0 && (verif / count != size || verif % count != 0))
+		return (NULL);
 	ret = malloc(size * count);
 	if (!ret)
-		return (0);
+		return (NULL);
 	ft_bzero(ret, size * count);
 	return (ret);
 }
