@@ -6,13 +6,13 @@
 /*   By: lbirloue <lbirloue@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 13:51:37 by lbirloue          #+#    #+#             */
-/*   Updated: 2023/10/20 10:35:14 by lbirloue         ###   ########.fr       */
+/*   Updated: 2023/10/25 10:45:36 by lbirloue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	check_verif(char c, char const *set)
+static size_t	check_verif(char c, char const *set)
 {
 	size_t	i;
 
@@ -26,7 +26,7 @@ size_t	check_verif(char c, char const *set)
 	return (0);
 }
 
-size_t	start_indice(char const *s1, char const *set)
+static size_t	start_indice(char const *s1, char const *set)
 {
 	size_t	i;
 	size_t	count;
@@ -41,7 +41,7 @@ size_t	start_indice(char const *s1, char const *set)
 	return (count);
 }
 
-size_t	final_indice(char const *s1, char const *set)
+static size_t	final_indice(char const *s1, char const *set)
 {
 	size_t	i;
 	size_t	count;

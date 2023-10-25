@@ -6,7 +6,7 @@
 /*   By: lbirloue <lbirloue@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 13:13:26 by lbirloue          #+#    #+#             */
-/*   Updated: 2023/10/19 13:29:26 by lbirloue         ###   ########.fr       */
+/*   Updated: 2023/10/25 09:42:45 by lbirloue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
+	if (fd < 0)
+		return ;
 	if (n == -2147483648)
 	{
 		ft_putchar_fd('-', fd);

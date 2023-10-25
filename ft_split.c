@@ -6,13 +6,13 @@
 /*   By: lbirloue <lbirloue@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 09:57:00 by lbirloue          #+#    #+#             */
-/*   Updated: 2023/10/23 19:18:56 by lbirloue         ###   ########.fr       */
+/*   Updated: 2023/10/25 10:44:44 by lbirloue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	size_str(char const *s, char c, ssize_t i)
+static size_t	size_str(char const *s, char c, ssize_t i)
 {
 	size_t	ret;
 
@@ -25,7 +25,7 @@ size_t	size_str(char const *s, char c, ssize_t i)
 	return (ret);
 }
 
-int	str_count(char const *s, char c)
+static int	str_count(char const *s, char c)
 {
 	size_t	i;
 	int		j;
@@ -48,7 +48,7 @@ int	str_count(char const *s, char c)
 	return (j);
 }
 
-char	**freeall(char **s, ssize_t i)
+static char	**freeall(char **s, ssize_t i)
 {
 	while (i >= 0)
 	{
@@ -61,7 +61,7 @@ char	**freeall(char **s, ssize_t i)
 	return (s);
 }
 
-char	**split2(char const *s, char c, char **ret)
+static char	**split2(char const *s, char c, char **ret)
 {
 	unsigned int	i;
 	unsigned int	j;

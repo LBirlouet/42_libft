@@ -6,13 +6,13 @@
 /*   By: lbirloue <lbirloue@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 19:14:14 by lbirloue          #+#    #+#             */
-/*   Updated: 2023/10/23 09:50:07 by lbirloue         ###   ########.fr       */
+/*   Updated: 2023/10/25 10:43:41 by lbirloue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	c_nbr(int n)
+static int	c_nbr(int n)
 {
 	int	i;
 
@@ -29,7 +29,7 @@ int	c_nbr(int n)
 	return (i);
 }
 
-char	*posint(int char_nbr, int n, char *ret)
+static char	*posint(int char_nbr, int n, char *ret)
 {
 	int		char_0;
 	char	char_c;
@@ -46,7 +46,7 @@ char	*posint(int char_nbr, int n, char *ret)
 	return (ret);
 }
 
-char	*negint(int char_nbr, int n, char *ret)
+static char	*negint(int char_nbr, int n, char *ret)
 {
 	int		char_0;
 	char	char_c;

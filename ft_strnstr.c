@@ -6,13 +6,13 @@
 /*   By: lbirloue <lbirloue@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 15:36:35 by lbirloue          #+#    #+#             */
-/*   Updated: 2023/10/20 14:33:25 by lbirloue         ###   ########.fr       */
+/*   Updated: 2023/10/25 10:45:17 by lbirloue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	verif(const char *s1, const char *s2, size_t n)
+static int	verif(const char *s1, const char *s2, size_t n)
 {
 	int	i;
 	int	j;

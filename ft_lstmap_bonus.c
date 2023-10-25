@@ -6,7 +6,7 @@
 /*   By: lbirloue <lbirloue@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 13:35:58 by lbirloue          #+#    #+#             */
-/*   Updated: 2023/10/23 18:31:12 by lbirloue         ###   ########.fr       */
+/*   Updated: 2023/10/25 10:39:54 by lbirloue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,23 @@
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
+	t_list	*start;
 	t_list	*ret;
-	t_list	*begin;
 
-	begin = 0;
-	if (!lst)
+	ret = 0;
+	if (!lst || !f)
 		return (NULL);
 	while (lst)
 	{
-		ret = ft_lstnew(f(lst->content));
-		if (!ret)
+		start = ft_lstnew(f(lst->content));
+		if (!start)
 		{
-			ft_lstclear(&begin, del);
+			ft_lstclear(&ret, del);
 			return (0);
 		}
-		ft_lstadd_back(&begin, ret);
+		ft_lstadd_back(&ret, start);
+		start = start->next;
 		lst = lst->next;
 	}
-	return (begin);
+	return (ret);
 }
