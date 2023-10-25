@@ -43,7 +43,7 @@ int	ft_atoi(const char *str)
 		if (str[i++] == '-')
 			sign = sign * -1;
 	}
-	while (str[i] >= '0' && str[i] <= '9')
+	while (str[i] >= '0' && str[i] <= '9' && ret < 9223372036854775807)
 	{
 		ret = (ret * 10) + (str[i] - 48);
 		if (!(str[i + 1] >= '0' && str[i + 1] <= '9'))
