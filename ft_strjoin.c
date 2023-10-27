@@ -6,7 +6,7 @@
 /*   By: lbirloue <lbirloue@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 13:36:41 by lbirloue          #+#    #+#             */
-/*   Updated: 2023/10/19 13:35:50 by lbirloue         ###   ########.fr       */
+/*   Updated: 2023/10/27 12:35:11 by lbirloue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,16 +22,15 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	i = 0;
 	j = 0;
+	if (!s1 || !s2)
+		return (NULL);
 	size_s1 = ft_strlen(s1);
 	size_s2 = ft_strlen(s2);
 	ret = malloc((size_s1 + size_s2 + 1) * sizeof(char));
 	if (!ret)
 		return (0);
-	while (i < size_s1)
-	{
-		ret[i] = s1[i];
-		i++;
-	}
+	ft_strlcpy(ret, s1, size_s1 + 1);
+	i = size_s1;
 	while (i < size_s1 + size_s2)
 	{
 		ret[i] = s2[j++];
