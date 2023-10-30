@@ -6,7 +6,7 @@
 /*   By: lbirloue <lbirloue@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 11:33:21 by lbirloue          #+#    #+#             */
-/*   Updated: 2023/10/23 11:42:36 by lbirloue         ###   ########.fr       */
+/*   Updated: 2023/10/30 11:30:11 by lbirloue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ t_list	*ft_lstlast(t_list *lst)
 	t_list	*i;
 	int		j;
 
-	i = lst;
 	if (!lst)
 		return (NULL);
+	i = lst;
 	j = ft_lstsize(i);
 	while (j > 1)
 	{
