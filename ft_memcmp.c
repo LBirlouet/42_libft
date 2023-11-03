@@ -6,7 +6,7 @@
 /*   By: lbirloue <lbirloue@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 15:29:20 by lbirloue          #+#    #+#             */
-/*   Updated: 2023/10/19 13:32:15 by lbirloue         ###   ########.fr       */
+/*   Updated: 2023/11/03 09:53:14 by lbirloue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t			i;
+	int				i;
 	unsigned char	*str1;
 	unsigned char	*str2;
 

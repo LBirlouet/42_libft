@@ -6,7 +6,7 @@
 /*   By: lbirloue <lbirloue@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 15:32:14 by lbirloue          #+#    #+#             */
-/*   Updated: 2023/10/19 17:21:18 by lbirloue         ###   ########.fr       */
+/*   Updated: 2023/11/03 09:51:00 by lbirloue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,5 @@ void	*ft_memmove(void *dest, const void *src, size_t len)
 	}
 	else
 		ft_memcpy(dest, src, len);
-	return (dest);
+	return ((void *)dest);
 }
